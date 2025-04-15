@@ -24,14 +24,14 @@ Crear un archivo .env en la raiz del proyecto
 ```
 # Variables de entorno para la bd 
 POSTGRES_DB=db_atenciones
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=123456
+POSTGRES_USER="Usuario de la base de datos" 
+POSTGRES_PASSWORD="Password de la base de datos"
 POSTGRES_PORT=5432 
 
 # Variables de entorno para Spring Boot 
 SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/db_atenciones
-SPRING_DATASOURCE_USERNAME=postgres
-SPRING_DATASOURCE_PASSWORD=123456
+SPRING_DATASOURCE_USERNAME="Usuario de la base de datos" 
+SPRING_DATASOURCE_PASSWORD="Password de la base de datos"
 SERVER_PORT=9100
 ```
 
