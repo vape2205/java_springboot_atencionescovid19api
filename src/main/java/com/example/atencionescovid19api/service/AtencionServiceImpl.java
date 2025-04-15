@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -26,8 +28,9 @@ public class AtencionServiceImpl implements AtencionService {
     private AtencionMapper atencionMapper;
 
     @Override
-    public List<AtencionDTO> getAll() {
-        var list = atencionRepository.findAll();
+    public List<AtencionDTO> getAll(Integer page, Integer size) {
+        Pageable pageable = PageRequest.of(page, size);
+        var list = atencionRepository.findAll(pageable).toList();
         return atencionMapper.toDTOList(list);
     }
 

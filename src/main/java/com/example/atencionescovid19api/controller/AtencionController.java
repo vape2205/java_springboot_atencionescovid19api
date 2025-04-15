@@ -43,8 +43,9 @@ public class AtencionController {
     }
 
     @GetMapping
-    public ResponseEntity<List<AtencionDTO>> obtenerTodos() {
-        var lista = atencionService.getAll();
+    public ResponseEntity<List<AtencionDTO>> obtenerTodos(@RequestParam(name = "page",defaultValue = "0") Integer page,
+    @RequestParam(name = "size",defaultValue = "20") Integer size) {
+        var lista = atencionService.getAll(page, size);
         return ResponseEntity.ok(lista);
     }
 

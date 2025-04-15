@@ -7,7 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.example.atencionescovid19api.dto.AtencionDTO;
 
 public interface AtencionService {
-    List<AtencionDTO> getAll();
+    List<AtencionDTO> getAll(Integer page, Integer size);
     AtencionDTO getById(Long id);
     AtencionDTO create(AtencionDTO dto);
     AtencionDTO update(Long id, AtencionDTO dto);
